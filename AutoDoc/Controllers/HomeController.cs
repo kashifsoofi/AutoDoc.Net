@@ -3,14 +3,16 @@ using AutoDoc.Web.Models;
 
 namespace AutoDoc.Web
 {
+    [Route("[controller]"), Route("/")]
     public class HomeController : Controller
     {
+        [Route("[action]"), Route("")]
         public IActionResult Index()
         {
             return View(CreateUser());
         }
 
-        public User CreateUser()
+        private User CreateUser()
         {
             User user = new User()
             {
